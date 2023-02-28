@@ -1,0 +1,195 @@
+/// Main Styles File
+/// Here we import all the global Styles files we need for our project.
+
+@import "styles/normalize.scss";
+@import "styles/root.scss";
+@import "styles/fonts.scss";
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #F9F8FB;
+}
+
+.content {
+  min-height: 100vh;
+  padding: 1em;
+
+  .header-info {
+    color: #14132B;
+    text-align: center;
+    font-size: 2rem;
+    padding-inline: 1em;
+    margin: 1.5em 0;
+
+    p {
+      color: #989BB4;
+      font-size: 1rem;
+
+    }
+  }
+
+  .cards {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr;
+
+    .card {
+      margin: 1em;
+      border: 1px solid #DADFE9;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: white;
+      color: #14132B;
+      padding: 1.5em 2em;
+
+      p {
+        color: #989BB4;
+      }
+
+      span {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      .price {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 0.5em;
+      }
+
+      .price::before {
+        content: '$';
+        vertical-align: super;
+        font-size: 1rem;
+      }
+
+      .price::after {
+        content: '/year';
+        vertical-align: sub;
+        color: #989BB4;
+        font-size: 1rem;
+      }
+
+      ul {
+        list-style-type: none;
+        margin-bottom: 0.3em;
+
+        li {
+          margin: 1em 0;
+          display: flex;
+          align-items: center;
+        }
+
+        li::before {
+          content: '✓';
+          color: white;
+          display: grid;
+          place-content: center;
+          width: 18px;
+          height: 18px;
+          font-size: 0.6rem;
+          background-color: #EE9C50;
+          border-radius: 50%;
+          margin-right: 1em;
+        }
+      }
+
+      a {
+        margin-top: auto;
+        background-color: #14132B;
+        color: white;
+        border-radius: 1em;
+        padding: 1em 0;
+        text-align: center;
+        text-decoration: none;
+
+      }
+
+      a:hover {
+        background-color: #393850;
+      }
+
+      a:active {
+        background-color: #060613;
+      }
+
+    }
+
+    .black-card {
+      background-color: #14132B;
+      color: white;
+
+      a {
+        background-color: #7863F9;
+      }
+
+      a:hover {
+        background-color: #9180FF;
+      }
+
+      a:active {
+        background-color: #6A53F4;
+      }
+
+      ul li::before {
+        color: #14132B;
+      }
+    }
+
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .content {
+    .cards {
+      .card {
+        display: grid;
+        grid-template-areas:
+          "title price"
+          "desc price"
+          "list button"
+        ;
+        grid-template-columns: 300px 1fr;
+        column-gap: 2em;
+        // grid-template-rows: 50px 50px 100px;
+        justify-content: stretch;
+        align-items: center;
+
+        span:first-child {
+          grid-area: title
+        }
+
+        .price {
+          grid-area: price;
+          align-self: start;
+          justify-self: end;
+        }
+
+        p {
+          grid-area: desc;
+        }
+
+        ul {
+          grid-area: list;
+        }
+
+        a {
+          grid-area: button;
+        }
+      }
+
+    }
+  }
+
+}
+
+@media screen and (min-width: 1280px) {
+  .content {
+    .cards {
+      width: 80%;
+      margin: auto;
+      grid-template: 1fr / repeat(3, 1fr);
+    }
+  }
+}
