@@ -97,11 +97,11 @@
         background-color: var(--color-dark);
         transition: 0.2s;
         &:hover {
-            background-color: #393850;
+            background-color: var(--color-hover);
         }
 
         &:active {
-            background-color: #060613;
+            background-color: var(--color-active);
         }
 
 
@@ -123,11 +123,11 @@
                 background-color: var(--color-blue);
         
                 &:hover {
-                    background-color: #9180FF;
+                    background-color: var(--color-hover-purple);
                 }
         
                 &:active {
-                    background-color: #6A53F4;
+                    background-color: var(--color-active-purple);
                 }
             }
         }

@@ -4,7 +4,6 @@
 import '../styles/home-page.scss'
 import '../styles/header.scss'
 import '../styles/cards.scss'
-import '../styles/black-card.scss'
 
 
 import {
